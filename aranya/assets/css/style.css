@@ -2,12 +2,12 @@
    MANTHAN HOSPITALITY — Design System
    A hospitality-group site spanning multiple resorts.
    Palette: deep forest ink + brass, warm stone neutrals.
-   Type: Fraunces (display) / Inter (body).
+   Type: Fraunces (display) / Inter (body) / IBM Plex Mono (labels, data).
    Signature motif: a single contour line — mountain elevation on one
    property, tideline on another — that ties every resort to one brand.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
   /* --- color: deep forest + brass, warm stone neutrals --- */
@@ -35,7 +35,7 @@
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
-  --font-mono: var(--font-body);
+  --font-mono: 'IBM Plex Mono', monospace;
 
   --container: 1240px;
   --gutter: clamp(20px, 5vw, 64px);
@@ -605,13 +605,11 @@ p {
   from {
     opacity: 0;
     transform: translateY(26px);
-    filter: blur(14px);
   }
 
   to {
     opacity: 1;
     transform: none;
-    filter: blur(0);
   }
 }
 
@@ -668,16 +666,44 @@ p {
   opacity: .9;
 }
 
+.contour path {
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
+  animation: drawContour 3.5s var(--ease) .6s forwards;
+}
+
+@keyframes drawContour {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* ---------- resort split cards ---------- */
 .resort-card {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: clamp(28px, 4vw, 64px);
   align-items: center;
+  background: var(--paper);
+  padding: clamp(24px, 3vw, 40px);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(18, 33, 27, 0.04);
+  transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+  transform-style: preserve-3d;
+}
+
+.resort-card:hover {
+  transform: translateY(-12px) perspective(1400px) rotateX(2deg) rotateY(-1.5deg);
+  box-shadow: 20px 40px 60px -15px rgba(18, 33, 27, 0.12);
 }
 
 .resort-card:nth-child(even) {
   direction: rtl;
+}
+
+.resort-card:nth-child(even):hover {
+  transform: translateY(-12px) perspective(1400px) rotateX(2deg) rotateY(1.5deg);
+  box-shadow: -20px 40px 60px -15px rgba(18, 33, 27, 0.12);
 }
 
 .resort-card:nth-child(even)>* {
@@ -1370,27 +1396,23 @@ p {
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  filter: blur(12px);
-  transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
-  filter: blur(0);
 }
 
 .reveal-stagger>* {
   opacity: 0;
   transform: translateY(28px);
-  filter: blur(12px);
-  transition: opacity .8s var(--ease), transform .8s var(--ease), filter .8s var(--ease);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
 }
 
 .reveal-stagger.is-visible>* {
   opacity: 1;
   transform: none;
-  filter: blur(0);
 }
 
 .reveal-stagger.is-visible>*:nth-child(1) {
