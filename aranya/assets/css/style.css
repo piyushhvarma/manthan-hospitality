@@ -220,9 +220,10 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: .78rem;
-  letter-spacing: .1em;
+  font-family: var(--font-body);
+  font-size: .85rem;
+  font-weight: 500;
+  letter-spacing: .06em;
   text-transform: uppercase;
   padding: 15px 28px;
   border-radius: 50px;
@@ -342,15 +343,15 @@ p {
 }
 
 .nav-logo-icon {
-  height: 48px;
+  height: 32px;
   width: auto;
 }
 
 .nav-logo-text {
-  height: 18px;
+  height: 12px;
   /* Correctly scaled height relative to cropped bounds */
   width: auto;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .nav-links {
