@@ -605,11 +605,13 @@ p {
   from {
     opacity: 0;
     transform: translateY(26px);
+    filter: blur(14px);
   }
 
   to {
     opacity: 1;
     transform: none;
+    filter: blur(0);
   }
 }
 
@@ -1368,23 +1370,27 @@ p {
 .reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity .9s var(--ease), transform .9s var(--ease);
+  filter: blur(12px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+  filter: blur(0);
 }
 
 .reveal-stagger>* {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity .8s var(--ease), transform .8s var(--ease);
+  filter: blur(12px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease), filter .8s var(--ease);
 }
 
 .reveal-stagger.is-visible>* {
   opacity: 1;
   transform: none;
+  filter: blur(0);
 }
 
 .reveal-stagger.is-visible>*:nth-child(1) {
