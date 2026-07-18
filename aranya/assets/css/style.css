@@ -682,11 +682,14 @@ p {
 .resort-card {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: clamp(28px, 4vw, 64px);
+  gap: clamp(20px, 3vw, 40px);
   align-items: center;
-  background: var(--paper);
-  padding: clamp(24px, 3vw, 40px);
-  border-radius: 24px;
+  background: var(--moss);
+  color: var(--stone);
+  padding: clamp(16px, 2.5vw, 32px);
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 20px;
   box-shadow: 0 8px 30px rgba(18, 33, 27, 0.04);
   transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
   transform-style: preserve-3d;
@@ -755,7 +758,7 @@ p {
 
 .resort-card-body p.desc {
   margin-top: 18px;
-  color: var(--slate);
+  color: var(--slate-on-ink);
   max-width: 46ch;
 }
 
@@ -771,13 +774,13 @@ p {
   align-items: center;
   gap: 8px;
   font-size: .85rem;
-  color: var(--ink);
+  color: var(--stone);
 }
 
 .resort-amenities svg {
   width: 16px;
   height: 16px;
-  color: var(--brass);
+  color: var(--brass-light);
   flex-shrink: 0;
 }
 
