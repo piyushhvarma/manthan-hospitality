@@ -1,0 +1,10 @@
+# Ignore image assets
+aranya/assets/img/*
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.avif
+*.jfif
+*.crdownload
