@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now | Manthan Hospitality</title>
+  <meta name="description" content="Check availability and request a booking at Manthan Resort or Gajraj Resort.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 22c3-6 5-9 7-9s3 4 5 4 3-7 6-7 3 9 5 9' fill='none' stroke='%23A9834B' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .book-layout {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: clamp(28px, 4vw, 64px);
+      align-items: start;
+    }
+
+    @media (max-width:900px) {
+      .book-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="nav-brand">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+        <path d="M2 22c3-6 5-9 7-9s3 4 5 4 3-7 6-7 3 9 5 9" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M2 26c3-4 5-6 7-6s3 3 5 3 3-5 6-5 3 6 5 6" stroke-linecap="round" stroke-linejoin="round"
+          opacity=".5" />
+      </svg>
+      <span><b>MANTHAN</b><span>HOSPITALITY</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+      </svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a href="our-resorts.html">Our Resorts</a>
+        <div class="nav-dropdown-panel">
+          <a href="resort-manthan.html"><span>Manthan Resort</span> <small>Boutique</small></a>
+          <a href="resort-gajraj.html"><span>Gajraj Resort</span> <small>Luxury</small></a>
+          <a href="our-resorts.html"><span>View all hotels</span> <small>→</small></a>
+        </div>
+      </div>
+      <a href="experiences.html">Experiences</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="book-now.html" class="btn btn-brass is-active">Book Now</a>
+    </nav>
+  </header>
+
+  <section class="page-hero" style="min-height:42vh;">
+    <div class="hero-media">
+      <img src="assets/img/gajraj/32fab4908a9f11eeb6790a58a9feac02.webp" alt="Book your stay with Manthan Hospitality">
+    </div>
+    <div class="hero-inner">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Book Now</p>
+      <p class="hero-eyebrow">Reserve Your Stay</p>
+      <h1>Begin your escape.</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="book-layout">
+        <div class="book-form-card reveal">
+          <p class="eyebrow">Availability Request</p>
+          <h2 style="font-size:clamp(1.6rem,2.6vw,2.1rem); margin-top:12px;">Tell us your dates, and we'll confirm
+            within
+            one business day.</h2>
+          <form data-form style="margin-top:32px;">
+            <div class="form-row">
+              <div class="field"><label for="bk-resort">Property</label>
+                <select id="bk-resort">
+                  <option value="manthan">Manthan Resort (Boutique)</option>
+                  <option value="gajraj">Gajraj Resort (Luxury)</option>
+                  <option value="undecided">Not sure yet</option>
+                </select>
+              </div>
+              <div class="field"><label for="bk-room">Room Category</label>
+                <select id="bk-room">
+                  <option>Standard AC Room / Premium Room</option>
+                  <option>Deluxe AC Cottage / Luxury Cottage</option>
+                  <option>Family Room / Family Cottage</option>
+                  <option>Recommend for me</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="bk-checkin">Check-in</label><input id="bk-checkin" type="date" required>
+              </div>
+              <div class="field"><label for="bk-checkout">Check-out</label><input id="bk-checkout" type="date" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="bk-guests">Guests</label><input id="bk-guests" type="number" min="1"
+                  max="6" value="2"></div>
+              <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" type="tel" required></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="bk-name">Full name</label><input id="bk-name" type="text" required></div>
+              <div class="field"><label for="bk-email">Email</label><input id="bk-email" type="email" required></div>
+            </div>
+            <div class="field"><label for="bk-notes">Anything we should know?</label><textarea id="bk-notes" rows="3"
+                placeholder="Celebrations, dietary needs, accessibility, arrival time..."></textarea></div>
+            <p class="form-note">This is a request form, not an instant booking: our reservations team confirms
+              availability and rate before charging anything.</p>
+            <button type="submit" class="btn btn-brass" style="margin-top:20px;">Submit Request
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <p class="form-success" role="status">Request received: a reservations specialist will confirm availability
+              and reach out within one business day.</p>
+          </form>
+        </div>
+
+        <div class="reveal">
+          <div class="book-form-card" style="background:var(--ink); color:var(--stone); box-shadow:none;">
+            <p class="eyebrow">Prefer To Talk?</p>
+            <div class="book-summary" style="margin-top:22px;">
+              <div class="book-summary-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path
+                    d="M6 3h3l2 5-2.5 2a12 12 0 0 0 5.5 5.5l2-2.5 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 2-2Z"
+                    stroke-linejoin="round" />
+                </svg>
+                <div>
+                  <h4>Call Reservations</h4>
+                  <p>+91 98200 00000 · 7am to 11pm daily</p>
+                </div>
+              </div>
+              <div class="book-summary-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M3 6h18v12H3Z M3 7l9 6 9-6" stroke-linejoin="round" />
+                </svg>
+                <div>
+                  <h4>Email Us</h4>
+                  <p>stay@manthanhospitality.in</p>
+                </div>
+              </div>
+              <div class="book-summary-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3.5 2" stroke-linecap="round" />
+                </svg>
+                <div>
+                  <h4>Response Time</h4>
+                  <p>Within one business day, every day of the week.</p>
+                </div>
+              </div>
+              <div class="book-summary-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" />
+                  <circle cx="12" cy="9" r="2.4" />
+                </svg>
+                <div>
+                  <h4>Cancellation</h4>
+                  <p>Free cancellation up to 7 days before arrival.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-brand">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3">
+              <path d="M2 22c3-6 5-9 7-9s3 4 5 4 3-7 6-7 3 9 5 9" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span><b>MANTHAN</b><span>HOSPITALITY</span></span>
+          </a>
+          <p>A boutique hospitality group of wilderness resorts across the forest buffer zones of Pench Tiger Reserve.
+          </p>
+        </div>
+        <div>
+          <h4>Our Resorts</h4>
+          <ul>
+            <li><a href="resort-manthan.html">Manthan Resort</a></li>
+            <li><a href="resort-gajraj.html">Gajraj Resort</a></li>
+            <li><a href="our-resorts.html">All properties</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="experiences.html">Experiences</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay In Touch</h4>
+          <p style="font-size:.86rem; margin-bottom:18px;">Occasional notes on new stays and quiet-season offers. No
+            spam, ever.</p>
+          <form data-form>
+            <input type="email" placeholder="Your email" required aria-label="Email address">
+            <button type="submit" aria-label="Subscribe">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 12h16M14 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </form>
+          <p class="form-success" role="status" style="margin-top:14px;">Subscribed, welcome to the list.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Manthan Hospitality Pvt. Ltd. All rights reserved.</p>
+        <div class="footer-social"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">LinkedIn</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Preselect resort from ?resort=manthan|gajraj query param
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const resort = params.get('resort');
+      const select = document.getElementById('bk-resort');
+      if (resort && select) {
+        const match = Array.from(select.options).find(o => o.value === resort);
+        if (match) select.value = resort;
+      }
+    })();
+  </script>
+</body>
+
+</html>
