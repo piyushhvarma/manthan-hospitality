@@ -2,12 +2,12 @@
    MANTHAN HOSPITALITY — Design System
    A hospitality-group site spanning multiple resorts.
    Palette: deep forest ink + brass, warm stone neutrals.
-   Type: Fraunces (display) / Inter (body) / IBM Plex Mono (labels, data).
+   Type: Fraunces (display) / Inter (body).
    Signature motif: a single contour line — mountain elevation on one
    property, tideline on another — that ties every resort to one brand.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
   /* --- color: deep forest + brass, warm stone neutrals --- */
@@ -35,7 +35,7 @@
 
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-mono: var(--font-body);
 
   --container: 1240px;
   --gutter: clamp(20px, 5vw, 64px);
