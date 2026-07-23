@@ -108,8 +108,7 @@ select {
 }
 
 :focus-visible {
-  outline: 2px solid var(--brass);
-  outline-offset: 3px;
+  outline: none;
 }
 
 .container {
@@ -348,7 +347,7 @@ p {
 }
 
 .nav-logo-text {
-  height: 12px;
+  height: 100px;
   /* Correctly scaled height relative to cropped bounds */
   width: auto;
   margin-top: 1px;
